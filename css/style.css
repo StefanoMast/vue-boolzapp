@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.container {
+    background-color: aqua;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+#w-container {
+    margin: auto;
+    width: 70%;
+    height: 100%;
+    padding-top: 2rem;
+    display: flex;
+}
+
+.col-contacts {
+    width: 40%;
+    background-color: white;
+    height: 80%;
+}
+
+.col-chat {
+    width: 60%;
+    background-color: brown;
+    height: 80%;
+}
+
+.head-row-contacts {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 40px;
+    background-color: lightgray;
+}
+
+.notification-row-contacts {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 40px;
+    background-color: lightblue;
+}
+
+.row-contacts {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 40px;
+    background-color: bisque;
+    border: 2px solid black;
+}
+
+input {
+    width: 100%;
+    height: 30px;
+}
