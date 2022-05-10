@@ -17,29 +17,25 @@ body {
 
 #w-container {
     margin: auto;
-    width: 70%;
+    width: 80%;
     height: 100%;
     padding-top: 2rem;
     display: flex;
 }
-
+/* SEZIONE CONTATTI */
 .col-contacts {
     width: 40%;
     background-color: white;
     height: 80%;
 }
 
-.col-chat {
-    width: 60%;
-    background-color: brown;
-    height: 80%;
-}
+
 
 .head-row-contacts {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 40px;
+    height: 50px;
     background-color: lightgray;
 }
 
@@ -47,7 +43,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 40px;
+    height: 50px;
     background-color: lightblue;
 }
 
@@ -55,12 +51,36 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 40px;
-    background-color: bisque;
-    border: 2px solid black;
+    height: 50px;
+    background-color: white;
+    border: 1px solid black;
 }
 
 input {
     width: 100%;
     height: 30px;
+}
+
+/* SEZIONE CHAT */
+
+.col-chat {
+    width: 60%;
+    /* background-color: brown; */
+    height: 80%;
+}
+
+.chat-space {
+    width: 100%;
+    height: calc(100% - 100px);
+}
+
+.chat-space img {
+    width: 100%;
+    height: 100%;
+}
+
+.col-chat-footer {
+    width: 100%;
+    height: 50px;
+    background-color: lightgray;
 }
