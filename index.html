@@ -21,11 +21,11 @@
                         <img src="img/avatar_io.jpg" alt="">
                     </div>
                     <div class="notification-row-contacts"></div>
-                    <input type="text" button placeholder="Cerca o inizia una nuova chat">
-                    <div class="row-contacts avatar">
-                        <img src="img/avatar_1.jpg" alt="">
+                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    <div v-for="element in contacts" class="row-contacts avatar">
+                        <img :src="'img/avatar' + element.avatar + '.jpg'" alt=""> {{element.name}}
                     </div>
-                    <div class="row-contacts avatar">
+                    <!-- <div class="row-contacts avatar">
                         <img src="img/avatar_2.jpg" alt="">
                     </div>
                     <div class="row-contacts avatar">
@@ -45,7 +45,7 @@
                     </div>
                     <div class="row-contacts avatar">
                         <img src="img/avatar_8.jpg" alt="">
-                    </div>
+                    </div> -->
 
                 </div>
                 <div class="col-chat">
@@ -53,10 +53,10 @@
                         <img src="img/avatar_1.jpg" alt="">
                     </div>
                     <div class="chat-space">
-                        <!-- <img src="img/mine.jpg" alt=""> -->
+                        
                     </div>
                     <div class="col-chat-footer">
-
+                        <input type="text" placeholder="Scrivi qualcosa">
                     </div>
 
                 </div>
