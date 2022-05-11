@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
@@ -19,11 +20,22 @@
                 <div class="col-contacts">
                     <div class="head-row-contacts avatar">
                         <img src="img/avatar_io.jpg" alt="">
+                        <h6>Sofia</h6>
                     </div>
-                    <div class="notification-row-contacts"></div>
-                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    <div class="notification-row-contacts">
+                        <i class="fas fa-bell-slash"></i>
+                        <span>Ricevi notifiche di nuovi messaggi</span>
+                        <span>Attiva notifiche desktop</span>
+                    </div>
+                    
+                    <div class="search-bar">
+                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    </div>
+                    
+                    
                     <div v-for="element in contacts" class="row-contacts avatar">
-                        <img :src="'img/avatar' + element.avatar + '.jpg'" alt=""> {{element.name}}
+                        <img :src="'img/avatar' + element.avatar + '.jpg'" alt=""> 
+                        <div class="name">{{element.name}} {{element.date}}</div>
                     </div>
                     <!-- <div class="row-contacts avatar">
                         <img src="img/avatar_2.jpg" alt="">
@@ -53,6 +65,20 @@
                         <img src="img/avatar_1.jpg" alt="">
                     </div>
                     <div class="chat-space">
+                        <div class="user-green">
+                            <div class="message-green">
+                                <div class="text-message">
+                                    ciao
+                                </div>
+                                <div class="data"></div>
+                            </div>
+                        </div>
+                        <div class="user-white">
+                            <div class="message-white">
+                                <div class="text-message"></div>
+                                <div class="data"></div>
+                            </div>
+                        </div>
                         
                     </div>
                     <div class="col-chat-footer">
