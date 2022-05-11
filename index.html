@@ -31,12 +31,16 @@
                     <div class="search-bar">
                         <input type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
+                    <section class="contacts">
+                        <div class="contact">
+                            <div @click="changeChat(index)" v-for="(element, index) in contacts" class="row-contacts avatar">
+                                <img :src="'img/avatar' + element.avatar + '.jpg'" :alt="element.name"> 
+                                <div class="name">{{element.name}}</div>
+                            </div>
+                        </div>
+                    </section>
                     
                     
-                    <div v-for="element in contacts" class="row-contacts avatar">
-                        <img :src="'img/avatar' + element.avatar + '.jpg'" alt=""> 
-                        <div class="name">{{element.name}} {{element.date}}</div>
-                    </div>
                     <!-- <div class="row-contacts avatar">
                         <img src="img/avatar_2.jpg" alt="">
                     </div>
@@ -65,21 +69,22 @@
                         <img src="img/avatar_1.jpg" alt="">
                     </div>
                     <div class="chat-space">
-                        <div class="user-green">
-                            <div class="message-green">
-                                <div class="text-message">
-                                    ciao
+                        <div v-for="element in contacts[selectedChat].messages">
+                            <div class="user-green" v-if="element.status === 'sent'">
+                                <div class="message-green">
+                                    <div class="text-message">
+                                        {{element.message}}
+                                    </div>
+                                    <div class="data">{{element.date}}</div>
                                 </div>
-                                <div class="data"></div>
+                            </div>
+                            <div class="user-white" v-else>
+                                <div class="message-white">
+                                    <div class="text-message">{{element.message}}</div>
+                                    <div class="data">{{element.date}}</div>
+                                </div>
                             </div>
                         </div>
-                        <div class="user-white">
-                            <div class="message-white">
-                                <div class="text-message"></div>
-                                <div class="data"></div>
-                            </div>
-                        </div>
-                        
                     </div>
                     <div class="col-chat-footer">
                         <input type="text" placeholder="Scrivi qualcosa">
