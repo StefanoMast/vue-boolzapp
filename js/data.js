@@ -88,12 +88,6 @@ const app = new Vue(
                     ],
                 }
             ],
-        },
-        methods: {
-            //al click sulla chat mostro i messaggi della chat di riferimento
-            changeChat(index) {
-                this.selectedChat = index;
-            }
         }
     }
 );
