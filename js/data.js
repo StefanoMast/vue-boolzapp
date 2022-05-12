@@ -87,13 +87,43 @@ const app = new Vue(
                     ],
                 }
             ],
-        currentContact: 0
+        currentContact: 0,
+        newMessage: ''
+        },
+        computed: {
+            currentContactObj() {
+                return this.contacts[this.currentContact];
+            }
         },
         methods: {
             selectContact(index) {
                 this.currentContact = index;
+            },
+            sendMessage () {
+                const selectedContact = this.contacts[this.currentContact];
+                selectedContact.messages.push({
+                    date: date = this.getCurrentTime,
+                    message: this.newMessage,
+                    status: 'sent'
+                });
+                this.newMessage = '';
+                setTimeout(this.receiveMessage, 1000);
+
+            },
+            receiveMessage() {
+                const selectedContact = this.contacts[this.currentContact];
+                selectedContact.messages.push({
+                    date: date = this.getCurrentTime,
+                    message: 'ciao',
+                    status: 'received'
+                });
+            },
+            getCurrentTime() {
+                return dayjs().format('DD-MM-YYYY HH:mm:ss');
             }
         }
     }
 );
+
+ 
 

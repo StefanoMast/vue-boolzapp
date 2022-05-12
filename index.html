@@ -89,7 +89,7 @@
                 <!-- message item  -->
                 <div class="message message--sent"
                 :class="'message--' + item.status"
-                v-for="item in contacts[currentContact].messages">
+                v-for="item in currentContactObj.messages">
                     <div class="message__box">
                         <div class="message__text">
                             {{ item.message }}
@@ -117,7 +117,8 @@
                     <i class="far fa-smile"></i>
                 </div>
                 <div class="new-message__input">
-                    <input type="text" placeholder="Scrivi un messaggio">
+                    <input @keyup.enter="sendMessage" type="text" placeholder="Scrivi un messaggio"
+                    v-model="newMessage">
                 </div>
                 <div class="new-message__actions">
                     <i class="far fa-smile"></i>
