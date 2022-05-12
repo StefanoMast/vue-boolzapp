@@ -1,3 +1,5 @@
+dayjs.extend(window.dayjs_plugin_customParseFormat);
+
 const app = new Vue(
     {
         el: "#root",
@@ -119,11 +121,18 @@ const app = new Vue(
                 });
             },
             getCurrentTime() {
-                return dayjs().format('DD-MM-YYYY HH:mm:ss');
+                return dayjs().format('DD/MM/YYYY HH:mm:ss');
+            },
+            getTime(date) {
+                const dayjsDate= dayjs(date, "DD/MM/YYYY HH:mm:ss");
+                return dayjsDate.format('HH:mm');
             }
         }
     }
 );
+
+const date = dayjs('10/01/2022 12:50', "DD/MM/YYYY HH:mm:ss");
+console.log(date.format('HH:mm'));
 
  
 

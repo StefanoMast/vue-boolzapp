@@ -95,21 +95,23 @@
                             {{ item.message }}
                         </div>
                         <div class="message__time">
-                            {{item.date}}
+                            {{getTime(item.date)}}
                         </div>
                         
                     </div>
                 </div>
 
-                <div class="message message--received">
+                <!-- <div class="message message--received">
                     <div class="message__box">
-                        <div class="message__text"></div>
-                        <div class="message__time">
-                            12:00
+                        <div class="message__text">
+                            <div class="message__time">
+                                12:00
+                            </div>
                         </div>
                         
+                        
                     </div>
-                </div>
+                </div> -->
             </section>
 
             <footer class="new-message">
@@ -207,5 +209,6 @@
         </div> -->
     </div>
     <script src="js/data.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.8.25/plugin/customParseFormat.js"></script>
 </body>
 </html>
