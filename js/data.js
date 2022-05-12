@@ -2,7 +2,6 @@ const app = new Vue(
     {
         el: "#root",
         data: {
-            selectedChat: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -88,6 +87,12 @@ const app = new Vue(
                     ],
                 }
             ],
+        currentContact: 0
+        },
+        methods: {
+            selectContact(index) {
+                this.currentContact = index;
+            }
         }
     }
 );

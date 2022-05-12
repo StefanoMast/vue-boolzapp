@@ -1,3 +1,28 @@
+:root {
+    --icons-color: #b1b1b1;
+    --border-color: #d6d6d6;
+    --header-bg-color: #eaeaea;
+    --header-small-text-color: #6b7376;
+    --disclaimer-bg-color: #8edafc;
+    --disclaimer-link-color: #4f7485;
+    --disclaimer-icon-bg-color: #f2fbff;
+    --search-bg-color: #fafafa;
+    --search-text-color: #b6b9bb;
+    --footer-bg-color: #f3eeea;
+    --sent-message-bg: #d5f9ba;
+    --recieved-message-bg: white;
+    --contact-border: #f5f5f5;
+    --contact-hover: #f4f5f5;
+    --contact-active: #e9ebeb;
+    --gradient-bg-color-1: #009688;
+    --gradient-bg-color-2: #dddbd1;
+    --gradient-bg-color-3: #d2dbdc;
+}
+
+html {
+    overflow: auto;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,12 +30,253 @@
 }
 
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100vh;
     font-family: 'Lato', sans-serif;
+    background-image: 
+        linear-gradient(
+        to bottom,
+         var (--gradient-bg-color-1) 0vh,
+         var (--gradient-bg-color-1) 15vh,
+         var (--gradient-bg-color-2) 15vh,
+         var (--gradient-bg-color-3) 100%);
+    overflow: hidden;
+    font-size: 100%;
 }
 
+clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* LAYOUT */
 .container {
+    width: 80%;
+    height: 90%;
+    min-width: 950px;
+    background-color: white;
+}
+
+.col {
+    float: left;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    height: 100%;
+    border-right: 1 px solid var(--border-color);
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    height: 100%;
+    background-color: blue;
+}
+/* HEADER */
+.col-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    background-color: var(--header-bg-color);
+    padding: 0 10px;
+}
+
+.col-header__avatar {
+    display: flex;
+    align-items: center;
+}
+
+.col-header__avatar img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+.col-header__text h3 {
+    font-weight: 300;
+}
+
+.col-header__text small {
+    color: var(--header-small-text-color);
+    font-size: 0.8rem;
+}
+
+.col-header__actions {
+    display: flex;
+    justify-content: end;
+    color: var(--icons-color);
+    font-size: 1.4rem;
+    margin: 0 2px;
+}
+/* SIDEBAR */
+.disclaimer {
+    height:80px;
+    background-color: green;
+}
+
+/* SEARCH */
+
+.search {
+    background-color: white;
+    padding: 10px;
+}
+
+.search__field {
+    display: flex;
+    border: 1px solid var(--icons-color);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.search__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    color: var(--icons-color);
+}
+
+.search__input {
+    width: 85%;
+    padding: 5px 10px;
+    border: 0;
+}
+/* CONTACTS */
+.contacts {
+    flex-grow: 1;
+    overflow-y: scroll;
+}
+
+
+.contact {
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.contact--active {
+    background-color: var(--contact-active);
+}
+
+.contact__avatar {
+    margin-right: 10px;
+}
+
+.contact__avatar img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.contact__text {
+    flex-grow: 1;
+
+}
+
+.contact__main-text {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact__text h3 {
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+.contact__main-text p {
+    font-size: 0.8rem;
+    color: var(--icons-color);
+}
+
+.contact__text small {
+    font-size: 0.8rem;
+    color: var(--icons-color);
+}
+/* RIGHT MAIN */
+/* Messages */
+.messages-section{
+    
+    flex-grow: 1;
+    overflow-y: scroll;
+    padding: 10px;
+    background-image: url(../img/mine.jpg);
+}
+
+.message {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.message--sent {
+    justify-content: flex-end;
+}
+
+.message--received {
+    justify-content: flex-start;
+}
+
+.message__box {
+    min-width: 250px;
+    max-width: 60%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.message--sent .message__box {
+    background-color: var(--sent-message-bg);
+}
+
+.message--received .message__box {
+    background-color: var(--recieved-message-bg);
+}
+
+.message__time {
+    color: var(--icons-color);
+    font-size: .8rem;
+    text-align: end;
+}
+/* New message footer  */
+.new-message {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    background-color: var(--footer-bg-color);
+}
+
+.new-message__actions {
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    width: 80px;
+    font-size: 1.6rem;
+}
+
+.new-message__input {
+    flex-grow: 1;
+}
+
+.new-message__input input {
+    width: 100%;
+    padding: 10px;
+    border: 0;
+    border-radius: 5px;
+}
+
+/* .container {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -24,7 +290,7 @@ body {
     display: flex;
 }
 /* SEZIONE CONTATTI */
-.col-contacts {
+/* .col-contacts {
     width: 40%;
     background-color: white;
     height: 100%;
@@ -33,14 +299,14 @@ body {
 .head-row-contacts {
     display: flex;
     flex-direction: column;
-    width: 100%;
+     width: 100%;
     height: 55px;
     background-color: lightgray;
 }
 
 .notification-row-contacts {
     /* display: flex; */
-    flex-direction: row;
+    /* flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     width: 100%;
@@ -97,24 +363,24 @@ input {
 
 /* SEZIONE CHAT */
 
-.col-chat {
+/* .col-chat {
     width: 60%;
     /* background-color: brown; */
-    height: 100%;
+    /* height: 100%;
 }
 
 .chat-space {
     width: 100%;
     height: calc(100% - 100px);
     background-image: url(../img/mine.jpg);
-}
+} */ 
 
 /* .chat-space img {
     width: 100%;
     height: 100%;
 } */
 
-.col-chat-footer {
+/* .col-chat-footer {
     width: 100%;
     height: 50px;
     background-color: rgb(238, 236, 236);
@@ -141,7 +407,7 @@ input {
 }
 
 /* MESSAGGi */
-.user-green {
+/* .user-green {
     width: 100%;
     min-height: 40px;
     display: flex;
@@ -166,9 +432,9 @@ input {
     display: flex;
     justify-content: flex-end;
     padding: 1rem;
-}
+} */
 
-.message-white {
+/* .message-white {
     width: 49%;
     min-height: 30px;
     background-color: white;
@@ -181,4 +447,4 @@ input {
 .text-message {
     display: flex;
     justify-content: flex-end;
-}
+} */ 
