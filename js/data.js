@@ -132,12 +132,12 @@ const app = new Vue(
                 this.contacts.forEach( contact=> {
                     const contactName= contact.name.toLowerCase();
                     const searchName = this.search.toLowerCase();
-                    if (contactName.includes(searchName) {
+                    if (contactName.includes(searchName)) {
                         contact.visible = true;
                     } else {
                         contact.visible = false;
-                    });
-                })
+                    }
+                });
             }
         }
     }
