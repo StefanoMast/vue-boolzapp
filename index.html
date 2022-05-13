@@ -38,7 +38,9 @@
                     <label for="search" class="search__icon">
                         <i class="fas fa-search"></i>
                     </label>
-                    <input class="search__input"type="text" id="search" placeholder="Cerca o inizia nuova chat">
+                    <input class="search__input"type="text" id="search" placeholder="Cerca o inizia nuova chat"
+                    @keyup="filter"
+                    v-model="search">
                 </div>
                 
             </section>
@@ -50,7 +52,8 @@
                 v-for="(element, index) in contacts"
                 class="contact"
                 :class="{ 'contact--active': currentContact === index }"
-                @click="selectContact(index)">
+                @click="selectContact(index)"
+                v-if="element.visible">
                     <div class="contact__avatar">
                         <img :src=" 'img/avatar' + element.avatar + '.jpg' " :alt="element.name">
                     </div>
